@@ -8,21 +8,21 @@ const Aadmin = () => {
           <input type="checkbox" className="w-4 h-4" />
           <span>
             <p className="text-sm  text-slate-500 ">
-              Customer Name / Email / Contact Number
+              Name / Semester / Contact
             </p>
           </span>
         </div>
         <div>
           <span>
             <p className="text-sm  text-slate-500 mr-[2.75rem]">
-              Status / Gender / Group
+              Purpose / Place
             </p>
           </span>
         </div>
         <div>
           <span>
             <p className="text-sm text-slate-500">
-              Revenue / Order / Count / Address Count
+             In Time / Out Time
             </p>
           </span>
         </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from '../components/admin/Navbar';
 import Sidebar from '../components/admin/Sidebar';
+import Aadmin from './Aadmin';
 const Student = () => {
   return (
     <div>
@@ -13,7 +14,7 @@ const Student = () => {
         </div>
 
         <div className=" col-span-12 lg:col-span-10  z-[-1]">
-          {/* <QueryForm /> */}
+         <Aadmin />
         </div>
       </div>
     </div>

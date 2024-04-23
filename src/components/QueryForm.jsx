@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
-
+import axios from 'axios';
+import { toast } from 'react-toastify';
 const QueryForm = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -16,38 +17,30 @@ const QueryForm = () => {
     });
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-
+        e.preventDefault(); 
+        console.log("Submitting");
+        setFormData(formData);
+       console.log(formData)
         try {
-            // Send form data to server-side endpoint for verification
-            const response = await fetch('/api/verifyRequest', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
-
-            if (response.ok) {
-                alert('Request submitted successfully for verification!');
-                // Optionally reset form after successful submission
-                setFormData({
-                    name: '',
-                    semester: '',
-                    roomNumber: '',
-                    personalContact: '',
-                    parentsContact: '',
-                    purpose: '',
-                    place: '',
-                    inDateTime: '',
-                    outDateTime: ''
-                });
-            } else {
-                alert('Failed to submit request. Please try again later.');
+          const response = await axios.post(
+            "http://localhost:4000/api/v1/student",
+            formData
+          );
+          console.log(response);
+            if (response.status === 200) {
+                toast.success("your request has been sent successful");
+                setFormData({name: '',
+                semester: '',
+                roomNumber: '',
+                personalContact: '',
+                parentsContact: '',
+                purpose: '',
+                place: '',
+                inDateTime: '',
+                outDateTime: ''})
             }
-        } catch (error) {
-            console.error('Error submitting request:', error);
-            alert('An error occurred. Please try again later.');
+        } catch (err) {
+          console.error(err);
         }
     };
 
