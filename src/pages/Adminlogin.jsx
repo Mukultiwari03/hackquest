@@ -9,7 +9,7 @@ import { FcGoogle } from "react-icons/fc";
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const { handleLogin } = useContext(UserContext);
+    const { handleAdminLogin } = useContext(UserContext);
 
     const handleSubmit = async (e) => {
         e.preventDefault(); 
@@ -20,7 +20,7 @@ const Login = () => {
                     { email, password }
                 );
                 if (response.status === 200) {
-                    handleLogin(response.data); 
+                    handleAdminLogin(response.data); 
                     toast.success("Login successful");
                 }
             } catch (err) {

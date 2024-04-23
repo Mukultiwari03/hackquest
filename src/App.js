@@ -7,8 +7,8 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import QueryForm from './components/QueryForm';
  // import Draft from './pages/Draft';
 // import Edit from './pages/Edit';
-import Adminlogin from './pages/Adminlogin';
-
+import Admin from './pages/Admin';
+import  Adminlogin from './pages/Adminlogin'; 
 function App() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
@@ -17,10 +17,14 @@ function App() {
     setUser(user);
     navigate('/student');
   };
+  const handleAdminLogin = (admin) => {
+    setadmin(admin);
+    navigate('/admin');
+  }
 
   return (
     
-    <UserContext.Provider value={{ user, handleLogin, admin, setadmin}}>
+    <UserContext.Provider value={{ user, handleLogin, admin, handleAdminLogin}}>
       <div className="App">
         <Routes>
         {/* <Route path="/admin/draft" element={<Draft />} /> */}
@@ -28,7 +32,9 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/student" element={<Student />} /> 
-          
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/QueryForm" element={<QueryForm />} />
+          <Route path="Adminlogin" element={<Adminlogin />} />
         </Routes>
       </div>
     </UserContext.Provider>
