@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import Qrcode from './qrcode';
 const QueryForm = () => {
     const [formData, setFormData] = useState({
         name: '',
@@ -117,7 +118,9 @@ const QueryForm = () => {
             </form>
         </div>
         </div>
+        <Qrcode/>
       </div>
+     
     </div>
        /* <div className="max-w-lg mx-auto">
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">

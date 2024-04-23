@@ -5,7 +5,6 @@ import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 
-
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -16,7 +15,7 @@ const Login = () => {
         if (email && password) {
             try {
                 const response = await axios.post(
-                    "http://localhost:4000/api/v1/login",
+                    "http://127.0.0.1:4000/api/v1/login",
                     { email, password }
                 );
                 if (response.status === 200) {
@@ -25,10 +24,10 @@ const Login = () => {
                 }
             } catch (err) {
                 console.error(err);
-                console.error("Login failed");
+                toast.error("Login failed"); // Use toast for error message
             }
         } else {
-            console.error("Email and password are required");
+            toast.error("Email and password are required"); // Use toast for error message
         }
     };
 
@@ -94,10 +93,8 @@ const Login = () => {
                             </div>
                             <div className="mt-6">
                                 <button className="inline-flex w-full items-center justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 shadow-sm hover:bg-gray-50">
-                                    
                                     <FcGoogle  width={100} height={100}/>
                                 </button>
-                               
                             </div>
                         </div>
                         <div className="m-auto mt-6 w-fit md:mt-8">
@@ -109,8 +106,7 @@ const Login = () => {
                 </div>
             </div>
             <div className='text-center'>
-
-            <Link to="/adminlogin" className="font-bold  w-full text-black underline">Login as Admin</Link>
+                <Link to="/adminlogin" className="font-bold  w-full text-black underline">Login as Admin</Link>
             </div>
         </div>
     );
