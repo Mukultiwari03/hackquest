@@ -12,7 +12,7 @@ const Login = () => {
     const { handleLogin } = useContext(UserContext);
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent the default form submission
+        e.preventDefault(); 
         if (email && password) {
             try {
                 const response = await axios.post(
@@ -20,7 +20,7 @@ const Login = () => {
                     { email, password }
                 );
                 if (response.status === 200) {
-                    handleLogin(response.data); // Pass the user data to handleLogin
+                    handleLogin(response.data); 
                     toast.success("Login successful");
                 }
             } catch (err) {
@@ -108,6 +108,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            
         </div>
     );
 }
