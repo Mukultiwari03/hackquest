@@ -4,7 +4,8 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Student from './pages/Student'
 import { Routes, Route, useNavigate } from 'react-router-dom';
-// import Draft from './pages/Draft';
+import QueryForm from './components/QueryForm';
+ // import Draft from './pages/Draft';
 // import Edit from './pages/Edit';
 function App() {
   const [user, setUser] = useState(null);
@@ -21,6 +22,7 @@ function App() {
       <div className="App">
         <Routes>
         {/* <Route path="/admin/draft" element={<Draft />} /> */}
+        <Route path="/QueryForm" element={<QueryForm />} />
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
