@@ -1,6 +1,6 @@
 import React from "react";
 import Custcomp from "../components/Custcomp";
-const Admin = () => {
+const Aadmin = () => {
   return (
     <div>
       <div className="mt-4 flex items-center justify-between px-4 py-2 border-[1px] rounded-sm">
@@ -33,4 +33,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default Aadmin;
