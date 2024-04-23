@@ -28,7 +28,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/student" element={<Student />} /> 
-          
+          <Route path="/QueryForm" element={<QueryForm />} />
+          <Route path="Adminlogin" element={<Adminlogin />} />
         </Routes>
       </div>
     </UserContext.Provider>
