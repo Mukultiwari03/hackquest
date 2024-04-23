@@ -36,7 +36,7 @@ const Login = () => {
         <div className="bg-white">
             <div className="flex min-h-[80vh] flex-col justify-center py-12 sm:px-6 lg:px-8">
                 <div className="text-center sm:mx-auto sm:w-full sm:max-w-md">
-                    <h1 className="text-3xl font-extrabold text-gray-900">Login</h1>
+                    <h1 className="text-3xl font-extrabold text-gray-900">Hey Admin!</h1>
                 </div>
                 <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                     <div className="bg-white px-4 pb-4 pt-8 sm:rounded-lg sm:px-10 sm:pb-6 sm:shadow">
@@ -101,16 +101,14 @@ const Login = () => {
                             </div>
                         </div>
                         <div className="m-auto mt-6 w-fit md:mt-8">
-                            <span className="m-auto text-gray-500">Don't have an account?
-                                <Link to="/signup" className="font-bold text-black underline">Create Account</Link>
-                            </span>
+                           
                         </div>
                     </div>
                 </div>
             </div>
             <div className='text-center'>
 
-            <Link to="/adminlogin" className="font-bold  w-full text-black underline">Login as Admin</Link>
+            
             </div>
         </div>
     );

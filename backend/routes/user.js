@@ -9,14 +9,14 @@
   router.post("/login",login);
   router.post("/signup",signup);
 
-// testing protected routes for single middleware
+
 router.get("/test", auth,(req,res)=>{
   res.json({
     success:true,
     message:"Welcome to the Protected route for Testing"
   })
 })
-// Protected Route
+
 router.get("/student",auth,isStudent,(req,res)=>{
   res.json({
     success:true,
@@ -51,11 +51,6 @@ router.get("/getEmail",auth, async (req,res)=>{
     })
   }
 
-  // console.log("ID: ",id);
-  // res.json({
-  //   success:true,
-  //   id:id,
-  //   message:"Welcome to the Email Route",
-  // })
+  
 })
   module.exports = router;

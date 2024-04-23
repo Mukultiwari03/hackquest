@@ -13,11 +13,4 @@ exports.dbConnect =async () => {
         console.log("error aa gya bhai database se connect krne me")
     }
     
-        // .then(() => {
-        //     console.log('Database connected');
-        // })
-        // .catch((err) => {
-        //     console.log('Database connection failed', err);
-        //     process.exit(1);
-        // });
 };
