@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Qrcode from './qrcode'
+import { UserContext } from '../App';
+import { useContext } from 'react';
 const Custcomp = () => {
   const [data, setData] = useState([]);
-  const [objectNeeded, setObjectNeeded] = useState({});
-
-
+  // const [objectNeeded, setObjectNeeded] = useState({});
+  const { setObjectNeeded } = useContext(UserContext);
+  const [qrdata, setqrdata] = useState({});
   useEffect(() => {
     fetchData();
   }, []);
@@ -36,11 +38,13 @@ const Custcomp = () => {
       // Remove the accepted item from the list
       const updatedData = data.filter(item => item._id !== id);
       setData(updatedData);
-      
+
       alert('Request accepted successfully!');
 
       let objnew = obj 
       setObjectNeeded(objnew)
+      setqrdata(objnew)
+      console.log("me custcomp me hu",qrdata)
 
     } catch (error) {
       console.log(error); // Log the error for debugging
@@ -89,7 +93,11 @@ const Custcomp = () => {
             <button className='rounded-2xl bg-red-600 px-2 py-1 text-white text-[12px] font-medium h-6' onClick={() => handleReject(item._id,item)}>Reject</button>
           </div>
         </div>
-      ))}
+      ))}{
+        qrdata &&
+        <Qrcode qrdata={qrdata} />
+
+      }
     </div>
   );
 };

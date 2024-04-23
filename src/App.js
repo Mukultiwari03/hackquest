@@ -13,6 +13,8 @@ function App() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const [admin,setadmin]=useState(null);
+  const [objectNeeded, setObjectNeeded] = useState({});
+
   const handleLogin = (user) => {
     setUser(user);
     navigate('/student');
@@ -21,20 +23,21 @@ function App() {
     setadmin(admin);
     navigate('/admin');
   }
+  console.log("i m in app.js",objectNeeded)
 
   return (
     
-    <UserContext.Provider value={{ user, handleLogin, admin, handleAdminLogin}}>
+    <UserContext.Provider value={{ user, handleLogin, objectNeeded,setObjectNeeded}}>
       <div className="App">
         <Routes>
         {/* <Route path="/admin/draft" element={<Draft />} /> */}
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/student" element={<Student />} /> 
+          <Route path="/student" element={<Student value={objectNeeded} />} /> 
         <Route path="/admin" element={<Admin />} />
           <Route path="/QueryForm" element={<QueryForm />} />
-          <Route path="Adminlogin" element={<Adminlogin />} />
+          <Route path="/Adminlogin" element={<Adminlogin />} />
         </Routes>
       </div>
     </UserContext.Provider>

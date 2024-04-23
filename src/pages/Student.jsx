@@ -2,8 +2,13 @@ import React from "react";
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
 // import QueryForm from '../components/QueryForm';
+// import { UserContext } from '../App';
+// import { useContext } from 'react';
 import Qrcode from "../components/qrcode";
-const Student = () => {
+const Student = ({objectNeeded}) => {
+  const studentobj = objectNeeded;
+  // const {  objectNeeded} = useContext(UserContext);
+  console.log("i m in Student",studentobj)
   return (
     <div>
       <Navbar />

@@ -1,26 +1,21 @@
-import React, { useState } from 'react'
+import React from 'react'
 import QRCode from "react-qr-code";
+import { UserContext } from '../App';
+import { useContext } from 'react';
 
+const Qr = () => {
+    const { objectNeeded } = useContext(UserContext);
+    console.log("i m in qrcode", objectNeeded)
 
-const Qr = ({objectNeeded}) => {
-  
-    const text = objectNeeded.stringify()
-    // function handleChange(e) {
-    //     setData(e.target.value)
-    // }
+    // Convert object to string
+    const text = JSON.stringify(objectNeeded);
+
     return (
         <div className='App'>
             <h1>QR</h1>
-            <QRCode value={text} />
-
-            {/* <div className="input-here">
-                <p>Enter your text here</p>
-                <input type="text" value={text} onChange={(e) => { handleChange(e) }} />
-            </div> */}
+            {text !== "{}" && <QRCode value={text} />}
         </div>
     )
 }
-
-    
 
 export default Qr
