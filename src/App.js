@@ -27,7 +27,7 @@ function App() {
 
   return (
     
-    <UserContext.Provider value={{ user, handleLogin, objectNeeded,setObjectNeeded}}>
+    <UserContext.Provider value={{ user, handleLogin, admin, handleAdminLogin, objectNeeded,setObjectNeeded}}>
       <div className="App">
         <Routes>
         {/* <Route path="/admin/draft" element={<Draft />} /> */}
