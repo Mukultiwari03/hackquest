@@ -12,9 +12,9 @@ const Signup = () => {
 
 
     const handleSubmit = async (e) => {
-        e.preventDefault(); // Prevent the default form submission
+        e.preventDefault(); 
         console.log("Submitting");
-        const signData = { name, email, password }; // Create an object with the form data
+        const signData = { name, email, password }; 
         console.log(signData);
         try {
           const response = await axios.post(

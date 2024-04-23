@@ -1,8 +1,7 @@
 import React from "react";
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-// import { Outlet } from "react-router-dom";
-// import Main from '../components/Main';
+
 const Student = () => {
   return (
     <div>
