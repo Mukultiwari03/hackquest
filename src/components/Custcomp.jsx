@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import Qrcode from './qrcode'
 const Custcomp = () => {
   const [data, setData] = useState([]);
 
@@ -12,6 +12,7 @@ const Custcomp = () => {
     try {
       const res = await axios.get('http://localhost:4000/api/v1/student');
       setData(res.data);
+     
       console.log(data);
     } catch (error) {
       console.log(error);
