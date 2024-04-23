@@ -4,6 +4,9 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Student from './pages/Student'
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import QueryForm from './components/QueryForm';
+ // import Draft from './pages/Draft';
+// import Edit from './pages/Edit';
 import Adminlogin from './pages/Adminlogin';
 
 function App() {
@@ -20,8 +23,7 @@ function App() {
     <UserContext.Provider value={{ user, handleLogin, admin, setadmin}}>
       <div className="App">
         <Routes>
-      
-          <Route path="/adminlogin" element={<Adminlogin />} />
+        {/* <Route path="/admin/draft" element={<Draft />} /> */}
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

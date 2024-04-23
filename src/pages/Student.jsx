@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from '../components/Navbar';
 import Sidebar from '../components/Sidebar';
-
+import QueryForm from '../components/QueryForm';
 const Student = () => {
   return (
     <div>
@@ -14,7 +14,7 @@ const Student = () => {
         </div>
 
         <div className=" col-span-12 lg:col-span-10  z-[-1]">
-          {/* <Main/> */}
+          {/* <QueryForm /> */}
         </div>
       </div>
     </div>

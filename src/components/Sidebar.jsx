@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { CgNotes } from "react-icons/cg";
 import { HiOutlineUser } from "react-icons/hi2";
 import { FiSettings } from "react-icons/fi";
-import { PiWrenchLight } from "react-icons/pi";
+// import { PiWrenchLight } from "react-icons/pi";
 
 
 const Sidebar = () => {
@@ -11,23 +11,23 @@ const Sidebar = () => {
         {
             id:"10",
             icon:<CgNotes size={20}/>,
-            title:<Link to="/admin/draft">Draft a Notice</Link>
+            title:<Link to="/QueryForm">Request a Query </Link>
         },
         {
             id:"4",
             icon:<HiOutlineUser size={20}/>,
-            title:<Link to="/admin/privacy">Privacy & Policy</Link>
+            title:<Link to="/admin/privacy">Rules & Compliance</Link>
         },
         {
             id:"8",
             icon:<FiSettings size={20}/>,
-            title:"Settings"
-        },
-        {
-            id:"9",
-            icon:<PiWrenchLight size={20}/>,
-            title:"Configuration"
+            title:"Previous Queries"
         }
+        // {
+        //     id:"9",
+        //     icon:<PiWrenchLight size={20}/>,
+        //     title:"Configuration"
+        // }
     ]
   return (
     <div className='h-screen shadow-md p-3 '>

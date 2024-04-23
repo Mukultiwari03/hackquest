@@ -112,7 +112,7 @@ const Signup = () => {
                             </div>
                         </div>
                         <div className="m-auto mt-6 w-fit md:mt-8">
-                            <span className="m-auto text-gray-500">Don't have an account?
+                            <span className="m-auto text-gray-500">Already have an account?
                                 <Link to="/login" className="font-bold text-black underline">Login</Link>
                             </span>
                         </div>
