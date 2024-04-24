@@ -23,6 +23,9 @@ app.use("/api/v1",user);
 const student = require("./routes/user");
 app.use("/api/v1",student)
 // activate
+
+const status = require('./routes/user');
+app.use("/api/v1",status)
 app.listen(PORT,()=>{
     console.log(`app is listening at ${PORT}`);
 })
@@ -38,3 +41,4 @@ app.get("/api/v1/student", async (request, response) => {
     }
   });
 // cookie-parser => what is this and why we need this?
+

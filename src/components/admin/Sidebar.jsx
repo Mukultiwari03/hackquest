@@ -11,7 +11,7 @@ const Sidebar = () => {
         {
             id:"10",
             icon:<CgNotes size={20}/>,
-            title:<Link to="/QueryForm">Request a Query </Link>
+            title:<Link to="/QueryForm">Student Queries </Link>
         },
         {
             id:"4",

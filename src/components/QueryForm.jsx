@@ -100,14 +100,16 @@ const QueryForm = () => {
                     <input type="text" id="place" name="place" value={formData.place} onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                 </div>
 
-                <div className="mb-4">
-                    <label htmlFor="inDateTime" className="block text-gray-700 text-sm font-bold mb-2">In Date and Time:</label>
-                    <input type="datetime-local" id="inDateTime" name="inDateTime" value={formData.inDateTime} onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
-                </div>
+               
 
                 <div className="mb-6">
                     <label htmlFor="outDateTime" className="block text-gray-700 text-sm font-bold mb-2">Out Date and Time:</label>
                     <input type="datetime-local" id="outDateTime" name="outDateTime" value={formData.outDateTime} onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+                </div>
+
+                <div className="mb-4">
+                    <label htmlFor="inDateTime" className="block text-gray-700 text-sm font-bold mb-2">In Date and Time:</label>
+                    <input type="datetime-local" id="inDateTime" name="inDateTime" value={formData.inDateTime} onChange={handleChange} required className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
                 </div>
 
                 <div className="flex items-center justify-between">
@@ -117,8 +119,8 @@ const QueryForm = () => {
                 </div>
             </form>
         </div>
-        </div>
         <Qrcode/>
+        </div>
       </div>
      
     </div>

@@ -9,6 +9,8 @@ import QueryForm from './components/QueryForm';
 // import Edit from './pages/Edit';
 import Admin from './pages/Admin';
 import  Adminlogin from './pages/Adminlogin'; 
+import axios from 'axios';
+import { useEffect } from 'react';
 function App() {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
@@ -24,6 +26,23 @@ function App() {
     navigate('/admin');
   }
   console.log("i m in app.js",objectNeeded)
+
+  useEffect(() => {
+    if (objectNeeded) {
+      fetchData();
+    }
+  }, [objectNeeded]);
+
+  const fetchData = async () => {
+    try {
+      const res = await axios.post('http://localhost:4000/api/v1/status', objectNeeded);
+      // const re = await axios.post('http://localhost:4000/api/v1/delete', objectNeeded);
+      console.log("objectNeeded has been sent successfully to the backend from app.js");
+    } catch (error) {
+      console.log(error);
+      console.log("Error in app.js while sending objectNeeded to the backend");
+    }
+  };
 
   return (
     

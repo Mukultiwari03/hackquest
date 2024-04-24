@@ -6,7 +6,7 @@ import { useContext } from 'react';
 const Custcomp = () => {
   const [data, setData] = useState([]);
   // const [objectNeeded, setObjectNeeded] = useState({});
-  const { setObjectNeeded } = useContext(UserContext);
+  const { setObjectNeeded,objectNeeded } = useContext(UserContext);
   const [qrdata, setqrdata] = useState({});
   useEffect(() => {
     fetchData();
@@ -42,9 +42,11 @@ const Custcomp = () => {
       alert('Request accepted successfully!');
 
       let objnew = obj 
-      setObjectNeeded(objnew)
-      setqrdata(objnew)
-      console.log("me custcomp me hu",qrdata)
+      setObjectNeeded({...objnew,status:"accepted"})
+      // setqrdata(objnew)
+      console.log("me custcomp me hu",objnew)
+      
+      // console.log("me custcomp me hu",qrdata)
 
     } catch (error) {
       console.log(error); // Log the error for debugging
@@ -58,6 +60,8 @@ const Custcomp = () => {
       // Remove the rejected item from the list
       setData(data.filter(item => item._id !== id));
       alert('Request rejected successfully!');
+      // let objnew = obj 
+      // setObjectNeeded({...objnew,status:"Rejected"})
     } catch (error) {
       console.log(error);
       alert('Failed to reject request. Please try again later.');

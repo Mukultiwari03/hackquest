@@ -7,13 +7,14 @@ const Qr = () => {
     const { objectNeeded } = useContext(UserContext);
     console.log("i m in qrcode", objectNeeded)
 
-    // Convert object to string
-    const text = JSON.stringify(objectNeeded);
+    const gen = `Name: ${objectNeeded.name} \n Semester: ${objectNeeded.semester} \n Phone No.: ${objectNeeded.personalContact} \n Purpose: ${objectNeeded.purpose} \n Place: ${objectNeeded.place} \n In Date/Time: ${objectNeeded.inDateTime} \n Out Date/Time: ${objectNeeded.outDateTime}\n`;
 
     return (
         <div className='App'>
             <h1>QR</h1>
-            {text !== "{}" && <QRCode value={text} />}
+            {objectNeeded.name && objectNeeded.semester && objectNeeded.purpose && objectNeeded.place &&  (
+                <QRCode value={gen} />
+            )}
         </div>
     )
 }

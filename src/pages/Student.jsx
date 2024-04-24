@@ -21,7 +21,7 @@ const Student = ({objectNeeded}) => {
 
         <div className=" col-span-12 lg:col-span-10  z-[-1]">
           {/* <QueryForm /> */}
-          <Qrcode />  
+          
         </div>
       </div>  
     </div>
